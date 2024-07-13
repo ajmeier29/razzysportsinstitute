@@ -8,7 +8,7 @@ import Subscribe from "./Subscribe";
 import { SubscribeContext } from "@/lib/SubscribeContext";
 import ToastMessage from "./ToastMessage";
 import { PreloadStaticImage } from "./PreloadImage";
-import heroPic from '../../public/images/shadow-filled-valley-in-the-mountains.webp';
+import mainWorkoutImage from '../../public/images/deadLift.webp'
 
 export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts }) => {
     const { showModal, setShowModal, showSuccessMessage } = useContext(SubscribeContext)
@@ -18,7 +18,8 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
     return (
         <>
             <div className="relative justify-center items-center mx-2 lg:mx-40 mt-2 drop-shadow-1xl">
-                <div className="flex w-full justify-center">
+                <PreloadStaticImage imgSrc={mainWorkoutImage} styleProps={'h-[700px] diagonal-cut-image'} />
+                {/* <div className="flex w-full justify-center">
                     {showModal && (
                         <Subscribe closeModal={closeModal} />
                     )}
@@ -37,7 +38,7 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                 </div>
                 <div>
                     <BlogPostsDisplay blogPosts={blogPosts} />
-                </div>
+                </div> */}
             </div>
         </>
     )

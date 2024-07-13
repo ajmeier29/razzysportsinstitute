@@ -69,3 +69,7 @@
 .animate-slide-out {
     animation: slide-up 0.5s forwards;
 }
+
+.diagonal-cut-image {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+}
