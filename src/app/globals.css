@@ -73,3 +73,7 @@
 .diagonal-cut-image {
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
 }
+
+.cardShadow {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
