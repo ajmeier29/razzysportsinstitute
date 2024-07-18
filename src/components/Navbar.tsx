@@ -19,7 +19,7 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
                     <div className="flex items-center justify-between">
                         <button>
                             <div className="flex items-center space-x-2">
-                                <h2 className="text-black font-bold text-2xl">Razzy's Sports Institute</h2>
+                                <h2 className="text-black font-bold text-2xl">Razzy&apos;s Sports Institute</h2>
                             </div>
                         </button>
                         <div className="hidden md:block">
