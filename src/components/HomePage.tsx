@@ -19,8 +19,8 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
             <div className="relative justify-center items-center mt-2 drop-shadow-1xl">
 
                 <PreloadStaticImage imgSrc={mainWorkoutImage} styleProps={'h-[700px] w-[150%] diagonal-cut-mobile  relative'} />
-                <div className="flex place-content-center items-center">
-                    <div className="absolute top-0 z-20 max-w-5xl mx-auto mt-8 px-4 text-center">
+                <div className="flex place-content-center justify-center">
+                    <div className="absolute top-0 z-20 max-w-5xl mx-auto mt:8 md:mt-24 px-4 text-center">
                         <div className="w-full max-w-3xl mx-auto">
                             <h1 className="text-4xl text-white font-bold mt-2 mb-6">Let us take the work out of working out.<br />by simplifying the workout.</h1>
                             <p className="px-4 text-white leading-relaxed">Propiti provides you with a quick, simple way to reach multiple estate
@@ -37,29 +37,24 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                 </div>
 
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
-                    <GymService services={gymServices} />
+                <div className="grid grid-cols-1 gap-4 mt-10 mx-40">
+                    <div className="flex place-content-center w-full flex-col">
+                        <div className="rounded-box grid h-10 text-2xl place-items-center">Sport Training Services</div>
+                        <div className="divider"></div>
+                        <div className="flex">
+                            <div className="card bg-base-300 rounded-box grid w-2/3 h-20 place-items-center">image</div>
+                            <div className="card bg-base-300 rounded-box grid h-20 w-full place-items-center">description</div>
+                        </div>
+                        <div className="divider"></div>
+                        <div className="rounded-box grid h-10 text-2xl place-items-center">Adult Metabolic Classes</div>
+                        <div className="divider"></div>
+                        <div className="flex">
+                            <div className="card bg-base-300 rounded-box grid w-2/3 h-20 place-items-center">image</div>
+                            <div className="card bg-base-300 rounded-box grid h-20 w-full place-items-center">description</div>
+                        </div>
+                    </div>
+                    {/* <GymService services={gymServices} /> */}
                 </div>
-                {/* <div className="flex w-full justify-center">
-                    {showModal && (
-                        <Subscribe closeModal={closeModal} />
-                    )}
-                    {showSuccessMessage ?
-                        (
-                            <ToastMessage message="Subscribed!" />
-                        ) :
-                        (<></>)}
-                </div>
-                <PreloadStaticImage imgSrc={heroPic} styleProps={'absolute object-cover overflow-hidden rounded-lg h-[600px] w-full z-0'}></PreloadStaticImage>
-                <div className="absolute z-40">
-                    <Hero subscribe />
-                </div>
-                <div className="slideUpFromBottomSlow">
-                    <ButtonBar setSomeState={openModal} />
-                </div>
-                <div>
-                    <BlogPostsDisplay blogPosts={blogPosts} />
-                </div> */}
             </div>
         </>
     )

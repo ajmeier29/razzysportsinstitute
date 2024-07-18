@@ -22,16 +22,16 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
                                 <h2 className="text-black font-bold text-2xl">Razzy's Sports Institute</h2>
                             </div>
                         </button>
-                        <div className="hidden lg:block">
+                        <div className="hidden md:block">
                             <ul className="flex space-x-10 text-base font-bold text-black/60 ">
                                 <li
-                                    className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">
+                                    className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear mt-3">
                                     <a href="#">Home</a>
                                 </li>
                                 <li
                                     className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">
                                     {/* <a href="#">Our services</a> */}
-                                    <div className="flex w-full justify-center items-center">
+                                    {/* <div className="flex w-full justify-center items-center">
 
                                         <div className="dropdown inline-block relative">
                                             <button className="inline-flex items-center">
@@ -45,14 +45,21 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
                                             </ul>
                                         </div>
 
+                                    </div> */}
+                                    <div className="dropdown dropdown-hover">
+                                        <div tabIndex={0} role="button" className="btn bg-inherit shadow-none border-none text-base font-bold text-black/60">Our Services</div>
+                                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                            <li><a>Sports Training</a></li>
+                                            <li><a>Adult Metabolic Classes</a></li>
+                                        </ul>
                                     </div>
                                 </li>
                                 <li
-                                    className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">
+                                    className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear mt-3">
                                     <a href="#">About</a>
                                 </li>
                                 <li
-                                    className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">
+                                    className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear mt-3">
                                     <a href="#">Contact</a>
                                 </li>
                             </ul>
@@ -61,7 +68,7 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
                             <button className="flex items-center text-black  justify-center px-6 py-2.5 font-semibold">Sign up</button>
                             {/* <button className="flex items-center justify-center rounded-md bg-[#4A3BFF] text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200">Login</button> */}
                         </div>
-                        <div className="flex items-center justify-center lg:hidden">
+                        <div className="flex items-center justify-center md:hidden">
                             <button onClick={setMenuOpen} className="focus:outline-none text-slate-200 ">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" className="text-2xl text-slate-800 focus:outline-none active:scale-110 active:text-red-500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                             </button>
@@ -72,17 +79,29 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
             {menu ?
                 (
                     <div className="absolute grid grid-cols-1 mobileMenuSlide -left-[500px] bg-primary-background z-50 h-screen w-full">
-                        <div className="absolute text-xl right-0 grid grid-cols-1 mx-5 mt-5 gap-4 justify-items-end bg-primary-background ">
-                            <div className="">
+                        <div className="absolute text-black text-xl font-medium left-0 grid grid-cols-1 mx-5 mt-5 gap-4 justify-items-start bg-primary-background ">
+                            <div className="ml-5">
                                 <a href="#">Home</a>
                             </div>
                             <div className="">
-                                <a href="#">Our Services</a>
+                                <details className="collapse collapse-arrow bg-base-200 bg-inherit">
+                                    <summary className="collapse-title text-xl font-medium bg-inherit">Our Services</summary>
+                                    <div className="collapse-content">
+                                        <div className="text-[15px] grid grid-cols-1 gap-4">
+                                            <div>
+                                                <a href="#">Sports Training</a>
+                                            </div>
+                                            <div>
+                                                <a href="#">Adult Metabolic Classes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
                             </div>
-                            <div>
+                            <div className="ml-5">
                                 <a href="#">About</a>
                             </div>
-                            <div>
+                            <div className="ml-5">
                                 <a href="#">Contact</a>
                             </div>
                         </div>
