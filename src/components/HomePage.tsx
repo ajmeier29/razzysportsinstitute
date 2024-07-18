@@ -37,7 +37,7 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                                 minded individuals and work your way to greatness.
                             </p>
                             <p className="mb-8 mt-4 px-4 leading-relaxed text-white">Contact us for a consultation...
-                                <span className="text-teal-200 font-bold">It's free!</span></p>
+                                <span className="text-teal-200 font-bold">It&apos;s free!</span></p>
                             <div>
                                 <a className="inline-block py-4 px-8 leading-none text-black bg-white bg-opacity-85 hover:bg-pink-600 rounded shadow text-sm font-bold"
                                     href="#">Contact Us</a>
@@ -63,7 +63,9 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                                 <>
                                     {baseballServices.map(({ src, title, description }) => {
                                         return (
-                                            <HomePageService src={src} title={title} description={description} />
+                                            <div key={title}>
+                                                <HomePageService src={src} title={title} description={description} />
+                                            </div>
                                         )
                                     })}
                                 </>
@@ -76,7 +78,9 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                                 <>
                                     {metabolicServices.map(({ src, title, description }) => {
                                         return (
-                                            <HomePageService src={src} title={title} description={description} />
+                                            <div key={title}>
+                                                <HomePageService src={src} title={title} description={description} />
+                                            </div>
                                         )
                                     })}
                                 </>

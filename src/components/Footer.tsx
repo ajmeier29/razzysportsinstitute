@@ -20,7 +20,7 @@ export default function Footer() {
                 className="pt-16 pb-7 ">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col min-[830px]:flex-row items-center justify-between gap-6 pb-10 border-b-2 border-gray-600">
-                        <h2 className="text-black font-bold text-2xl">Razzy's Sports Institute</h2>
+                        <h2 className="text-black font-bold text-2xl">Razzy&apos;s Sports Institute</h2>
                         <ul className="flex flex-col sm:flex-row items-center gap-5 sm:gap-12">
                             <SiteMapUrl url='/' name='Home' />
                             <SiteMapUrl url='#' name='Our Serives' />
