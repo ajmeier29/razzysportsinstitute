@@ -74,6 +74,25 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
 }
 
+.diagonal-cut-mobile {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 .cardShadow {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.mobileMenuSlide {
+    animation: menuSlide 0.6s forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes menuSlide {
+    100% {
+        left: 0;
+    }
 }

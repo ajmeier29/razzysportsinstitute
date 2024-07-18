@@ -20,20 +20,12 @@ export default function Footer() {
                 className="pt-16 pb-7 ">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col min-[830px]:flex-row items-center justify-between gap-6 pb-10 border-b-2 border-gray-600">
-                        <div className="max-sm:flex max-sm:flex-col max-sm:items-center bg-rust p-2 rounded-2xl">
-                            <h2 className='text-[20px] md:text-[20px] font-light text-white inline'>
-                                LEGION OF&nbsp;
-                            </h2>
-                            <h2 className='bg-hero-gradient text-[30px] md:text-[35px] font-extrabold inline text-transparent bg-clip-text'>
-                                WHOLENESS
-                            </h2>
-                        </div>
+                        <h2 className="text-black font-bold text-2xl">Razzy's Sports Institute</h2>
                         <ul className="flex flex-col sm:flex-row items-center gap-5 sm:gap-12">
                             <SiteMapUrl url='/' name='Home' />
-                            <SiteMapUrl url='/BlogPosts' name='Blog' />
-                            <SiteMapUrl url='/ReadingList' name='Reading List' />
-                            <SiteMapUrl url={schedulelUrl} name='Schedule' />
-                            <SiteMapUrl url='/Contact' name='Contact' />
+                            <SiteMapUrl url='#' name='Our Serives' />
+                            <SiteMapUrl url='#' name='About' />
+                            <SiteMapUrl url='#' name='Contact' />
                         </ul>
                     </div>
                     <div className="pt-7 flex flex-col min-[520px]:flex-row items-center justify-between gap-6">

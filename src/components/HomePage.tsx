@@ -1,15 +1,13 @@
 'use client'
 import { BlogPostData } from "@/data/data";
-import { BlogPostsDisplay } from "./BlogPostsDisplay";
-import ButtonBar from "./ButtonBar";
-import Hero from "./Hero";
 import { useContext } from "react";
-import Subscribe from "./Subscribe";
 import { SubscribeContext } from "@/lib/SubscribeContext";
-import ToastMessage from "./ToastMessage";
 import { PreloadStaticImage } from "./PreloadImage";
 import mainWorkoutImage from '../../public/images/deadLift.webp'
 import { GymService, GymServicesProps } from "./GymServices";
+import dumbellImage from '../../public/images/weight.png'
+import workoutImage from '../../public/images/workout.png'
+import scheduleImage from '../../public/images/calendar.png'
 
 export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts }) => {
     const { showModal, setShowModal, showSuccessMessage } = useContext(SubscribeContext)
@@ -18,8 +16,26 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
 
     return (
         <>
-            <div className="relative justify-center items-center mx-2 lg:mx-40 mt-2 drop-shadow-1xl">
-                <PreloadStaticImage imgSrc={mainWorkoutImage} styleProps={'h-[700px] diagonal-cut-image'} />
+            <div className="relative justify-center items-center mt-2 drop-shadow-1xl">
+
+                <PreloadStaticImage imgSrc={mainWorkoutImage} styleProps={'h-[700px] w-[150%] diagonal-cut-mobile  relative'} />
+                <div className="flex place-content-center items-center">
+                    <div className="absolute top-0 z-20 max-w-5xl mx-auto mt-8 px-4 text-center">
+                        <div className="w-full max-w-3xl mx-auto">
+                            <h1 className="text-4xl text-white font-bold mt-2 mb-6">Let us take the work out of working out.<br />by simplifying the workout.</h1>
+                            <p className="px-4 text-white leading-relaxed">Propiti provides you with a quick, simple way to reach multiple estate
+                                agents.<br />Allowing you to spend less time trawling through property portals,<br />giving you more time on the other things you enjoy.
+                            </p>
+                            <p className="mb-8 mt-4 px-4 leading-relaxed text-white">Oh, and the best bit...
+                                <span className="text-pink-600 font-bold">It's free!</span></p>
+                            <div>
+                                <a className="inline-block py-4 px-8 leading-none text-black bg-white bg-opacity-85 hover:bg-pink-600 rounded shadow text-sm font-bold"
+                                    href="#">Sign-up for free</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
                     <GymService services={gymServices} />
@@ -53,14 +69,17 @@ const gymServices: GymServicesProps[] = [
 
     {
         title: 'High-Intensity Workouts',
+        image: workoutImage,
         description: 'Our expert coaches guide you through functional movements, strength training, and conditioning exercises.'
     },
     {
         title: 'Functional Equipment',
+        image: dumbellImage,
         description: 'Experience functional fitness at its best with our cutting-edge equipment and personalized training'
     },
     {
         title: 'Flexible Class Schedules',
+        image: scheduleImage,
         description: 'Our gym offers flexible class times to fit your busy schedule'
     }
 ]

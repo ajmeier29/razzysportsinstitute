@@ -17,12 +17,9 @@ module.exports = {
           "linear-gradient(100deg, rgba(216,222,255,1) 0%, rgba(242,244,255,1) 27%, rgba(242,244,255,1) 76%, rgba(216,222,255,1) 100%)",
       },
       colors: {
-        "primary": "#e3d5d5",
-        "button-primary": "#F6E6CB",
-        "button-primary-hover": "#efd7b0",
-        "button-primary-disabled": "#e7dfd2",
-        "button-primary-txt-disabled": "#b2ada5",
-        "rust": "#9b6a5c"
+        "primary-background": "#eaf0f1",
+        "option-hover-bg": "#3f8790",
+        "option-bg": "#c0c7c8"
       },
       fontSize: {
         "navbar-font-xl": "20px"
