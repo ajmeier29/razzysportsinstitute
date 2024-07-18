@@ -78,34 +78,39 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
             </div>
             {menu ?
                 (
-                    <div className="absolute grid grid-cols-1 mobileMenuSlide -left-[500px] bg-primary-background z-50 h-screen w-full">
-                        <div className="absolute text-black text-xl font-medium left-0 grid grid-cols-1 mx-5 mt-5 gap-4 justify-items-start bg-primary-background ">
-                            <div className="ml-5">
-                                <a href="#">Home</a>
+                    <>
+                        <div className="absolute grid grid-cols-1 mobileMenuSlide -left-[500px] bg-primary-background z-50 h-screen w-full">
+                            <div onClick={setMenuClose} className="absolute right-0 m-4">
+                                <svg className="h-8 w-8 text-slate-500" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z" />  <line x1="18" y1="6" x2="6" y2="18" />  <line x1="6" y1="6" x2="18" y2="18" /></svg>
                             </div>
-                            <div className="">
-                                <details className="collapse collapse-arrow bg-base-200 bg-inherit">
-                                    <summary className="collapse-title text-xl font-medium bg-inherit">Our Services</summary>
-                                    <div className="collapse-content">
-                                        <div className="text-[15px] grid grid-cols-1 gap-4">
-                                            <div>
-                                                <a href="#">Sports Training</a>
-                                            </div>
-                                            <div>
-                                                <a href="#">Adult Metabolic Classes</a>
+                            <div className="absolute text-black text-xl font-medium left-0 grid grid-cols-1 mx-5 mt-5 gap-4 justify-items-start bg-primary-background ">
+                                <div className="ml-5">
+                                    <a href="#">Home</a>
+                                </div>
+                                <div className="">
+                                    <details className="collapse collapse-arrow bg-base-200 bg-inherit">
+                                        <summary className="collapse-title text-xl ml-1 my-[-20px] font-medium bg-inherit">Our Services</summary>
+                                        <div className="collapse-content mt-2">
+                                            <div className="text-[15px] ml-2 grid grid-cols-1 gap-3">
+                                                <div>
+                                                    <a href="#">Sports Training</a>
+                                                </div>
+                                                <div>
+                                                    <a href="#">Adult Metabolic Classes</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </details>
-                            </div>
-                            <div className="ml-5">
-                                <a href="#">About</a>
-                            </div>
-                            <div className="ml-5">
-                                <a href="#">Contact</a>
+                                    </details>
+                                </div>
+                                <div className="ml-5">
+                                    <a href="#">About</a>
+                                </div>
+                                <div className="ml-5">
+                                    <a href="#">Contact</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </>
                 )
                 :
                 (
