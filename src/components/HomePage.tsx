@@ -54,7 +54,7 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                 </div>
 
 
-                <div className="grid grid-cols-1 gap-4 mt-10 mx-40">
+                <div className="grid grid-cols-1 gap-4 mt-10 mx-3 md:mx-40">
                     <div className="grid grid-cols-1 gap-4 place-content-center w-full flex-col">
                         <div ref={sportsRef} className="rounded-box grid h-10 text-2xl place-items-center">Sport Training Services</div>
                         <div className="divider"></div>
@@ -63,16 +63,17 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                                 <>
                                     {baseballServices.map(({ src, title, description }) => {
                                         return (
-                                            <div key={title}>
+                                            <div className="" key={title}>
                                                 <HomePageService src={src} title={title} description={description} />
                                             </div>
                                         )
                                     })}
                                 </>
                             ) : (<></>)}
+
+                        <div className="rounded-box grid mt-10 h-10 text-2xl place-items-center">Adult Metabolic Classes</div>
                         <div className="divider"></div>
-                        <div className="rounded-box grid h-10 text-2xl place-items-center">Adult Metabolic Classes</div>
-                        <div className="divider"></div>
+
                         {metabolicServices ?
                             (
                                 <>
