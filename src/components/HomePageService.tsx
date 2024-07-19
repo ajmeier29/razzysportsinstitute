@@ -10,23 +10,25 @@ type ServiceProp =
 export default function HomePageService({ src, title, description }: ServiceProp) {
     return (
         <>
-            <div className="flex ">
-                <div className="relative card bg-base-300 rounded-box grid w-1/3 h-32 place-items-center overflow-hidden">
+            <div className="flex max-sm:flex-wrap">
+                <div className="card space-y-14 bg-base-300 rounded-box w-full md:w-1/3 h-48 md:h-32 overflow-hidden">
                     <Image
                         alt=''
                         fill
-                        sizes={''}
+                        sizes={"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
                         src={src}
                         style={{
                             objectFit: 'cover'
                         }}
                     />
                 </div>
-                <div className="card mx-5 rounded-box h-20 w-full">
-                    <h2 className="text-lg font-bold block">
+                <div className="card sm:mx-5 rounded-box h-40 md:h-20 w-full">
+                    <h2 className="text-2xl md:text-lg max-sm:text-center font-bold block">
                         {title}
                     </h2>
-                    {description}
+                    <div className="">
+                        {description}
+                    </div>
                 </div>
             </div>
         </>
