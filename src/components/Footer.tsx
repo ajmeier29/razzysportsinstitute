@@ -1,6 +1,7 @@
 'use client'
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function Footer() {
@@ -18,33 +19,116 @@ export default function Footer() {
                 data-aos-delay="50"
                 data-aos-duration="500"
                 className="pt-16 pb-7 ">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col min-[830px]:flex-row items-center justify-between gap-6 pb-10 border-b-2 border-gray-600">
-                        <h2 className="text-black font-bold text-2xl">Razzy&apos;s Sports Institute</h2>
-                        <ul className="flex flex-col sm:flex-row items-center gap-5 sm:gap-12">
-                            <SiteMapUrl url='/' name='Home' />
-                            <SiteMapUrl url='#' name='Our Serives' />
-                            <SiteMapUrl url='#' name='About' />
-                            <SiteMapUrl url='#' name='Contact' />
-                        </ul>
-                    </div>
-                    <div className="pt-7 flex flex-col min-[520px]:flex-row items-center justify-between gap-6">
-                        <span className="text-sm font-normal text-gray-500">©<a href="https://andrew-meier.dev">CodeByAndy</a> 2024, All rights reserved.</span>
-                        <div className="flex items-center gap-4">
-                            <a href='https://www.instagram.com/legion_of_wholeness?igsh=MTh5YXF0ZTU1MW9pdg=='
-                                aria-label='Link to Instagram Page'
-                                className="border border-rust p-2 rounded-full aspect-square text-rust transition-all duration-500 hover:text-slate-600 hover:border-slate-600 focus-within:outline-0 focus-within:text-slate-600 focus-within:border-slate-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <path
-                                        d="M7.7117 9.93956C7.7117 8.66117 8.76298 7.62456 10.0601 7.62456C11.3573 7.62456 12.4092 8.66117 12.4092 9.93956C12.4092 11.218 11.3573 12.2546 10.0601 12.2546C8.76298 12.2546 7.7117 11.218 7.7117 9.93956ZM6.44187 9.93956C6.44187 11.909 8.06177 13.5055 10.0601 13.5055C12.0585 13.5055 13.6784 11.909 13.6784 9.93956C13.6784 7.97012 12.0585 6.37367 10.0601 6.37367C8.06177 6.37367 6.44187 7.97012 6.44187 9.93956ZM12.9761 6.23228C12.976 6.3971 13.0256 6.55824 13.1184 6.69532C13.2113 6.83239 13.3433 6.93926 13.4978 7.00239C13.6523 7.06552 13.8223 7.08209 13.9863 7.05C14.1503 7.01791 14.301 6.93861 14.4193 6.82211C14.5377 6.70561 14.6182 6.55716 14.6509 6.39552C14.6836 6.23388 14.667 6.06632 14.603 5.91402C14.5391 5.76173 14.4307 5.63153 14.2917 5.53991C14.1527 5.44829 13.9893 5.39935 13.822 5.39928H13.8217C13.5975 5.39939 13.3825 5.48717 13.224 5.64336C13.0654 5.79954 12.9763 6.01136 12.9761 6.23228ZM7.21337 15.5922C6.52637 15.5613 6.15296 15.4486 5.90481 15.3533C5.57583 15.2271 5.3411 15.0767 5.0943 14.8338C4.8475 14.591 4.69474 14.3598 4.56722 14.0356C4.47049 13.7912 4.35605 13.4231 4.32482 12.746C4.29066 12.014 4.28384 11.7941 4.28384 9.93962C4.28384 8.08512 4.29123 7.86584 4.32482 7.13323C4.35611 6.45617 4.47139 6.08878 4.56722 5.84362C4.6953 5.51939 4.84784 5.28806 5.0943 5.04484C5.34076 4.80162 5.57526 4.65106 5.90481 4.5254C6.15285 4.43006 6.52637 4.31728 7.21337 4.28651C7.95613 4.25284 8.17925 4.24612 10.0601 4.24612C11.9411 4.24612 12.1644 4.25339 12.9078 4.28651C13.5948 4.31734 13.9676 4.43095 14.2163 4.5254C14.5453 4.65106 14.7801 4.80195 15.0268 5.04484C15.2736 5.28773 15.4258 5.51939 15.5539 5.84362C15.6507 6.08806 15.7651 6.45617 15.7963 7.13323C15.8305 7.86584 15.8373 8.08512 15.8373 9.93962C15.8373 11.7941 15.8305 12.0134 15.7963 12.746C15.765 13.4231 15.65 13.7911 15.5539 14.0356C15.4258 14.3598 15.2733 14.5912 15.0268 14.8338C14.7804 15.0765 14.5453 15.2271 14.2163 15.3533C13.9683 15.4486 13.5948 15.5614 12.9078 15.5922C12.165 15.6258 11.9419 15.6326 10.0601 15.6326C8.1784 15.6326 7.9559 15.6258 7.21337 15.5922ZM7.15503 3.03717C6.40489 3.07084 5.8923 3.18806 5.44465 3.35973C4.98105 3.53701 4.58859 3.77484 4.19641 4.16073C3.80423 4.54662 3.56352 4.93401 3.38364 5.39089C3.20945 5.83234 3.09051 6.33723 3.05635 7.07651C3.02162 7.81695 3.01367 8.05367 3.01367 9.93956C3.01367 11.8255 3.02162 12.0622 3.05635 12.8026C3.09051 13.542 3.20945 14.0468 3.38364 14.4882C3.56352 14.9448 3.80429 15.3327 4.19641 15.7184C4.58853 16.1041 4.98105 16.3416 5.44465 16.5194C5.89314 16.6911 6.40489 16.8083 7.15503 16.842C7.90675 16.8756 8.14655 16.884 10.0601 16.884C11.9737 16.884 12.2139 16.8762 12.9653 16.842C13.7155 16.8083 14.2277 16.6911 14.6756 16.5194C15.139 16.3416 15.5317 16.1043 15.9239 15.7184C16.3161 15.3325 16.5563 14.9448 16.7367 14.4882C16.9108 14.0468 17.0304 13.5419 17.064 12.8026C17.0981 12.0616 17.1061 11.8255 17.1061 9.93956C17.1061 8.05367 17.0981 7.81695 17.064 7.07651C17.0298 6.33717 16.9108 5.83206 16.7367 5.39089C16.5563 4.93428 16.3154 4.54723 15.9239 4.16073C15.5323 3.77423 15.139 3.53701 14.6762 3.35973C14.2277 3.18806 13.7154 3.07028 12.9658 3.03717C12.2145 3.00351 11.9743 2.99512 10.0607 2.99512C8.14712 2.99512 7.90675 3.00295 7.15503 3.03717Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a href='https://www.facebook.com/jbredbenner?mibextid=ZbWKwL'
-                                aria-label='Link to Facebook Page'
-                                className="border border-rust p-2 rounded-full aspect-square text-rust transition-all duration-500 hover:text-slate-600 hover:border-slate-600 focus-within:outline-0 focus-within:text-slate-600 focus-within:border-slate-600">
-                                <svg width="20" height="20" className="" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
-                            </a>
+                <div className="mt-8 bg-cyan-700 pt-9">
+                    <div className="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
+                        <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
+                            <div className="md:w-[316px]">
+                                <h2 className="text-white font-bold text-2xl">Razzy&apos;s Sports Institute</h2>
+                                <p className="mt-[18px] text-[15px] font-normal text-white/[80%]">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Eos, fugit non. Incidunt dolorum adipisci, tempore asperiores nemo odio facere officiis enim animi
+                                    placeat eaque nesciunt alias beatae id, at dicta.</p>
+                                {/* <div className="mt-[18px] flex gap-4">
+                                    <a className="hover:scale-110" target="_blank"
+                                        href="#"><img alt="facebook icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" src="https://www.englishyaari.com/img/facebook.svg" /></a><a
+                                            className="hover:scale-110" target="_blank"
+                                            href="/"><img alt="linkdin icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" src="https://www.englishyaari.com/img/linkdin.svg" /></a><a
+                                                className="hover:scale-110" target="_blank"
+                                                href="/"><img alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" src="https://www.englishyaari.com/img/instagram1.svg" /></a><a
+                                                    className="hover:scale-110" target="_blank"
+                                                    href=""><img alt="twitter icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" src="https://www.englishyaari.com/img/twitter.svg" /></a><a
+                                                        className="hover:scale-110" target="_blank"
+                                                        href="https://www.youtube.com/"><img alt="youtube icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" src="https://www.englishyaari.com/img/youtube.svg" /></a>
+                                </div> */}
+                            </div>
+                            <div className="md:w-[316px]">
+                                <div className="mt-[23px] flex">
+                                    <div className="flex h-[38px] w-[38px] items-center justify-center rounded-[75%]">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M20.8472 14.8554L16.4306 12.8764L16.4184 12.8707C16.1892 12.7727 15.939 12.7333 15.6907 12.7562C15.4424 12.7792 15.2037 12.8636 14.9963 13.002C14.9718 13.0181 14.9484 13.0357 14.9259 13.0545L12.6441 14.9998C11.1984 14.2976 9.70595 12.8164 9.00376 11.3895L10.9519 9.07294C10.9706 9.0495 10.9884 9.02606 11.0053 9.00075C11.1407 8.79384 11.2229 8.55667 11.2445 8.31035C11.2661 8.06402 11.2264 7.81618 11.1291 7.58887V7.57762L9.14438 3.15356C9.0157 2.85662 8.79444 2.60926 8.51362 2.44841C8.2328 2.28756 7.9075 2.22184 7.58626 2.26106C6.31592 2.42822 5.14986 3.05209 4.30588 4.01615C3.4619 4.98021 2.99771 6.21852 3.00001 7.49981C3.00001 14.9436 9.05626 20.9998 16.5 20.9998C17.7813 21.0021 19.0196 20.5379 19.9837 19.6939C20.9477 18.85 21.5716 17.6839 21.7388 16.4136C21.7781 16.0924 21.7125 15.7672 21.5518 15.4864C21.3911 15.2056 21.144 14.9843 20.8472 14.8554ZM16.5 19.4998C13.3185 19.4963 10.2682 18.2309 8.01856 15.9813C5.76888 13.7316 4.50348 10.6813 4.50001 7.49981C4.49648 6.58433 4.82631 5.69887 5.42789 5.00879C6.02947 4.3187 6.86167 3.87118 7.76907 3.74981C7.7687 3.75355 7.7687 3.75732 7.76907 3.76106L9.73782 8.16731L7.80001 10.4867C7.78034 10.5093 7.76247 10.5335 7.74657 10.5589C7.60549 10.7754 7.52273 11.0246 7.5063 11.2825C7.48988 11.5404 7.54035 11.7981 7.65282 12.0307C8.5022 13.7679 10.2525 15.5051 12.0084 16.3536C12.2428 16.465 12.502 16.5137 12.7608 16.495C13.0196 16.4762 13.2692 16.3907 13.485 16.2467C13.5091 16.2305 13.5322 16.2129 13.5544 16.1942L15.8334 14.2498L20.2397 16.2232C20.2397 16.2232 20.2472 16.2232 20.25 16.2232C20.1301 17.1319 19.6833 17.9658 18.9931 18.5689C18.3028 19.172 17.4166 19.5029 16.5 19.4998Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="ml-[18px]">
+                                        <a href="tel:+911800123444" className="font-Inter text-[14px] font-medium text-white">+1 610-555-5555</a>
+                                        <p className="font-Inter text-[12px] font-medium text-white">Support Number</p>
+                                    </div>
+                                </div>
+                                <div className="mt-[23px] flex">
+                                    <div className="flex h-[38px] w-[38px] items-center justify-center rounded-[75%]">
+                                        <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M19 0H1C0.801088 0 0.610322 0.0790178 0.46967 0.21967C0.329018 0.360322 0.25 0.551088 0.25 0.75V13.5C0.25 13.8978 0.408035 14.2794 0.68934 14.5607C0.970644 14.842 1.35218 15 1.75 15H18.25C18.6478 15 19.0294 14.842 19.3107 14.5607C19.592 14.2794 19.75 13.8978 19.75 13.5V0.75C19.75 0.551088 19.671 0.360322 19.5303 0.21967C19.3897 0.0790178 19.1989 0 19 0ZM10 7.98281L2.92844 1.5H17.0716L10 7.98281ZM7.25406 7.5L1.75 12.5447V2.45531L7.25406 7.5ZM8.36406 8.51719L9.48906 9.55312C9.62743 9.68014 9.80842 9.75062 9.99625 9.75062C10.1841 9.75062 10.3651 9.68014 10.5034 9.55312L11.6284 8.51719L17.0659 13.5H2.92844L8.36406 8.51719ZM12.7459 7.5L18.25 2.45438V12.5456L12.7459 7.5Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="ml-[18px]">
+                                        <a href="mailto:help@lorem.com" className="font-Inter text-[14px] font-medium text-[#fff]">help@rsi.com</a>
+                                        <p className="font-Inter text-[12px] font-medium text-[#fff]">Support Email</p>
+                                    </div>
+                                </div>
+                                <div className="mt-[23px] flex">
+                                    <div className="flex h-[38px] w-[38px] items-center justify-center rounded-[75%]">
+                                        <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9 4.5C8.25832 4.5 7.5333 4.71993 6.91661 5.13199C6.29993 5.54404 5.81928 6.12971 5.53545 6.81494C5.25162 7.50016 5.17736 8.25416 5.32205 8.98159C5.46675 9.70902 5.8239 10.3772 6.34835 10.9017C6.8728 11.4261 7.54098 11.7833 8.26841 11.9279C8.99584 12.0726 9.74984 11.9984 10.4351 11.7145C11.1203 11.4307 11.706 10.9501 12.118 10.3334C12.5301 9.7167 12.75 8.99168 12.75 8.25C12.75 7.25544 12.3549 6.30161 11.6517 5.59835C10.9484 4.89509 9.99456 4.5 9 4.5ZM9 10.5C8.55499 10.5 8.11998 10.368 7.74997 10.1208C7.37996 9.87357 7.09157 9.52217 6.92127 9.11104C6.75097 8.6999 6.70642 8.2475 6.79323 7.81105C6.88005 7.37459 7.09434 6.97368 7.40901 6.65901C7.72368 6.34434 8.12459 6.13005 8.56105 6.04323C8.9975 5.95642 9.4499 6.00097 9.86104 6.17127C10.2722 6.34157 10.6236 6.62996 10.8708 6.99997C11.118 7.36998 11.25 7.80499 11.25 8.25C11.25 8.84674 11.0129 9.41903 10.591 9.84099C10.169 10.2629 9.59674 10.5 9 10.5ZM9 0C6.81273 0.00248131 4.71575 0.872472 3.16911 2.41911C1.62247 3.96575 0.752481 6.06273 0.75 8.25C0.75 11.1938 2.11031 14.3138 4.6875 17.2734C5.84552 18.6108 7.14886 19.8151 8.57344 20.8641C8.69954 20.9524 8.84978 20.9998 9.00375 20.9998C9.15772 20.9998 9.30796 20.9524 9.43406 20.8641C10.856 19.8147 12.1568 18.6104 13.3125 17.2734C15.8859 14.3138 17.25 11.1938 17.25 8.25C17.2475 6.06273 16.3775 3.96575 14.8309 2.41911C13.2843 0.872472 11.1873 0.00248131 9 0ZM9 19.3125C7.45031 18.0938 2.25 13.6172 2.25 8.25C2.25 6.45979 2.96116 4.7429 4.22703 3.47703C5.4929 2.21116 7.20979 1.5 9 1.5C10.7902 1.5 12.5071 2.21116 13.773 3.47703C15.0388 4.7429 15.75 6.45979 15.75 8.25C15.75 13.6153 10.5497 18.0938 9 19.3125Z"
+                                                fill="white"></path>
+                                        </svg>
+                                    </div>
+                                    <div className="ml-[18px]">
+                                        <a href="mailto:help@lorem.com" className="font-Inter text-[14px] font-medium text-[#fff]">Sub Nerul, Mumbia,
+                                            India, 123456</a>
+                                        <p className="font-Inter text-[12px] font-medium text-white">Address</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mt-6 flex w-full flex-col justify-between text-white sm:flex-row md:mt-0 md:max-w-[341px]">
+                                <div className="">
+                                    <p className="text-deutziawhite font-inter text-[18px] font-medium leading-normal">Pages</p>
+                                    <ul>
+                                        <li className="mt-[15px]"><a
+                                            className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                                            href="/">Home</a></li>
+                                        <li className="mt-[15px]"><a
+                                            className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                                            href="#">Sports Training</a></li>
+                                        <li className="mt-[15px]"><a
+                                            className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                                            href="#">Adult Metabolic Classes</a></li>
+                                        <li className="mt-[15px]"><a
+                                            className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                                            href="#">About</a></li>
+                                        <li className="mt-[15px]"><a
+                                            className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                                            href="#">Pricing</a></li>
+                                        <li className="mt-[15px]"><Link
+                                            onClick={(e) => {
+                                                if (document) {
+                                                    e.preventDefault();
+                                                    (document.getElementById('contact_modal') as HTMLFormElement).showModal();
+                                                }
+                                            }}
+                                            className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                                            href="#">Contact</Link></li>
+                                        <li className="mt-[15px]"><Link
+                                            className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                                            href="/privacy-policy">Privcay policy</Link></li>
+                                    </ul>
+                                </div>
+                                {/* <div className="mt-6 flex flex-col gap-4 sm:mt-0">
+                                    <p className="text-deutziawhite font-inter text-[18px] font-medium">Download the app</p>
+                                    <div className="flex gap-4 sm:flex-col">
+                                        <a target="_blank"
+                                            href="#"><img alt="facebook icon" loading="lazy" width="168" height="50" decoding="async" data-nimg="1" src="https://www.englishyaari.com/img/google-store.svg" /></a><a
+                                                target="_blank"
+                                                href="#"><img alt="facebook icon" loading="lazy" width="168" height="50" decoding="async" data-nimg="1" src="https://www.englishyaari.com/img/apple-store.svg" /></a>
+                                    </div>
+                                </div> */}
+                            </div>
+                        </div>
+                        <hr className="mt-[30px] text-white" />
+                        <div className="flex items-center justify-center pb-8 pt-[9px] md:py-8">
+                            <span className="text-sm font-normal text-white">©<a href="https://andrew-meier.dev">CodeByAndy</a> 2024, All rights reserved.</span>
                         </div>
                     </div>
                 </div>

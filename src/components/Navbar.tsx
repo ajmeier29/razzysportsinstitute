@@ -60,7 +60,12 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
                                 </li>
                                 <li
                                     className="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear mt-3">
-                                    <a href="#">Contact</a>
+                                    <a onClick={(e) => {
+                                        if (document) {
+                                            e.preventDefault();
+                                            (document.getElementById('contact_modal') as HTMLFormElement).showModal();
+                                        }
+                                    }} href="#">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -70,7 +75,7 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
                         </div>
                         <div className="flex items-center justify-center md:hidden">
                             <button onClick={setMenuOpen} className="focus:outline-none text-slate-200 ">
-                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" aria-hidden="true" className="text-2xl text-slate-800 focus:outline-none active:scale-110 active:text-red-500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" aria-hidden="true" className="text-2xl text-slate-800 focus:outline-none active:scale-110 active:text-red-500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -105,7 +110,12 @@ export default function Navbar({ marginTop = 'mt-20' }: NavBarProps) {
                                 <div className="ml-5">
                                     <a href="#">About</a>
                                 </div>
-                                <div className="ml-5">
+                                <div onClick={() => {
+                                    if (document) {
+                                        setMenuClose();
+                                        (document.getElementById('contact_modal') as HTMLFormElement).showModal();
+                                    }
+                                }} className="ml-5">
                                     <a href="#">Contact</a>
                                 </div>
                             </div>
