@@ -28,6 +28,9 @@ module.exports = {
           "linear-gradient(100deg, rgba(216,222,255,1) 0%, rgba(242,244,255,1) 27%, rgba(242,244,255,1) 76%, rgba(216,222,255,1) 100%)",
       },
       colors: {
+        "primary-background": "#eaf0f1",
+        "option-hover-bg": "#3f8790",
+        "option-bg": "#c0c7c8",
         "primary-hover": "pink-600",
       },
       fontSize: {
