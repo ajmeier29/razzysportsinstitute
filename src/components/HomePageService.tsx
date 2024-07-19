@@ -23,7 +23,7 @@ export default function HomePageService({ src, title, description }: ServiceProp
                     />
                 </div>
                 <div className="card sm:mx-5 rounded-box h-40 md:h-20 w-full">
-                    <h2 className="text-2xl md:text-lg max-sm:text-center font-bold block">
+                    <h2 className="text-2xl max-sm:mt-2 md:text-lg max-sm:text-center md:font-bold block">
                         {title}
                     </h2>
                     <div className="">
