@@ -31,9 +31,9 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                     <div className="absolute top-0 z-20 max-w-5xl mx-auto mt:8 md:mt-24 px-4 text-center">
                         <div className="grid grid-cols-1 place-content-center justify-items-center w-full max-w-3xl mx-auto">
                             <h1 className="text-4xl text-white font-bold mt-10 mb-6">Your life is busy. We plan. You Workout</h1>
-                            <p className="px-4 text-lg text-white leading-relaxed">
-                                We create daily workouts to hit every muscle group each week making <br />
-                                sure you get a full body workout. Join our community of like <br />
+                            <p className="px-4 text-lg md:w-3/4 text-white leading-relaxed">
+                                We create daily workouts to hit every muscle group each week making
+                                sure you get a full body workout. Join our community of like
                                 minded individuals and work your way to greatness.
                             </p>
                             <p className="mb-8 mt-4 px-4 leading-relaxed text-white">Contact us for a consultation...
