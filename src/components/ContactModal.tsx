@@ -120,7 +120,7 @@ export default function ContactModal() {
                                         required: true
                                     })}
                                     className={`w-3/4 md:w-[80%] px-3 py-2 outline-none cardShadow rounded-lg z-0 h-28 ${errors.message ? 'placeholder-red-400' : ''}`}
-                                    placeholder={`${errors.message ? 'Message is required' : 'Whate are you inquiring about?'}`}
+                                    placeholder={`${errors.message ? 'Message is required' : 'What are you inquiring about?'}`}
                                 />
                                 <ReCAPTCHA
                                     ref={recaptcha}
