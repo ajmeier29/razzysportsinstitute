@@ -1,7 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   daisyui: {
-    themes: ["light"],
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          primary: "#eaf0f1",
+          secondary: "teal",
+        },
+      },
+    ],
   },
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -20,9 +28,7 @@ module.exports = {
           "linear-gradient(100deg, rgba(216,222,255,1) 0%, rgba(242,244,255,1) 27%, rgba(242,244,255,1) 76%, rgba(216,222,255,1) 100%)",
       },
       colors: {
-        "primary-background": "#eaf0f1",
-        "option-hover-bg": "#3f8790",
-        "option-bg": "#c0c7c8"
+        "primary-hover": "pink-600",
       },
       fontSize: {
         "navbar-font-xl": "20px"

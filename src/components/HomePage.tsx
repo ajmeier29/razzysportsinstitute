@@ -14,6 +14,7 @@ import fieldingImage from '../../public/images/fielding.jpeg'
 import squatImage from '../../public/images/ladies-strong-squat.jpg'
 import lungeImage from '../../public/images/ladies-lunge-together.jpg'
 import mealImage from '../../public/images/hotel-room-service-meal.jpg'
+import ContactModal from "./ContactModal";
 
 
 export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts }) => {
@@ -24,10 +25,13 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
 
     return (
         <>
-            <div className="relative justify-center items-center mt-2 drop-shadow-1xl">
 
-                <PreloadStaticImage imgSrc={mainWorkoutImage} styleProps={'h-[700px] w-[150%] diagonal-cut-mobile  relative'} />
+
+            <ContactModal />
+            <div className="relative justify-center items-center mt-2 drop-shadow-1xl">
+                <PreloadStaticImage imgSrc={mainWorkoutImage} styleProps={'h-[700px] w-full diagonal-cut-mobile  relative'} />
                 <div className="flex place-content-center justify-center">
+
                     <div className="absolute top-0 z-20 max-w-5xl mx-auto mt:8 md:mt-24 px-4 text-center">
                         <div className="grid grid-cols-1 place-content-center justify-items-center w-full max-w-3xl mx-auto">
                             <h1 className="text-4xl text-white font-bold mt-10 mb-6">Your life is busy. We plan. You Workout</h1>
@@ -36,11 +40,16 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                                 sure you get a full body workout. Join our community of like
                                 minded individuals and work your way to greatness.
                             </p>
+
                             <p className="mb-8 mt-4 px-4 leading-relaxed text-white">Contact us for a consultation...
                                 <span className="text-teal-200 font-bold">It&apos;s free!</span></p>
                             <div>
-                                <a className="inline-block py-4 px-8 leading-none text-black bg-white bg-opacity-85 hover:bg-pink-600 rounded shadow text-sm font-bold"
-                                    href="#">Contact Us</a>
+                                <button onClick={() => {
+                                    if (document) {
+                                        (document.getElementById('contact_modal') as HTMLFormElement).showModal();
+                                    }
+                                }} className="inline-block py-4 px-8 leading-none text-black hover:text-white bg-white bg-opacity-85 hover:bg-pink-600 rounded shadow text-sm font-bold"
+                                >Contact Us</button>
                             </div>
                             <button onClick={() => {
                                 sportsRef.current?.scrollIntoView({
@@ -52,8 +61,6 @@ export const HomePage: React.FC<{ blogPosts: BlogPostData[] }> = ({ blogPosts })
                         </div>
                     </div>
                 </div>
-
-
                 <div className="grid grid-cols-1 gap-4 mt-10 mx-3 md:mx-40">
                     <div className="grid grid-cols-1 gap-4 place-content-center w-full flex-col">
                         <div ref={sportsRef} className="rounded-box grid h-10 text-2xl place-items-center">Sport Training Services</div>
