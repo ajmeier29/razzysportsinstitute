@@ -1,7 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   daisyui: {
-    themes: ["light"],
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          primary: "#eaf0f1",
+          secondary: "teal",
+        },
+      },
+    ],
   },
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -22,7 +30,8 @@ module.exports = {
       colors: {
         "primary-background": "#eaf0f1",
         "option-hover-bg": "#3f8790",
-        "option-bg": "#c0c7c8"
+        "option-bg": "#c0c7c8",
+        "primary-hover": "pink-600",
       },
       fontSize: {
         "navbar-font-xl": "20px"
